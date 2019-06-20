@@ -267,6 +267,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_LTC_ADDRESS'] = $this->ltcAddress;
 			$postfields['CC_DASH_ADDRESS'] = $this->dashAddress;
 			$postfields['CC_SEND_ADDRESS'] = $this->sendAddress;
+			$postfields['CC_CDZC_ADDRESS'] = $this->cdzcAddress;
 
 			// perform a click action on the submit button of the form you are going to return
 
