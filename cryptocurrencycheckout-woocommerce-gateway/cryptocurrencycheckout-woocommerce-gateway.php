@@ -147,7 +147,7 @@ function cryptocurrencycheckout_gateway_init() {
 					'title'       => __( 'Title', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'text',
 					'description' => __( 'This controls the title for the payment method the customer sees during checkout.', 'cryptocurrencycheckout-wc-gateway' ),
-					'default'     => __( 'Offline Payment', 'cryptocurrencycheckout-wc-gateway' ),
+					'default'     => __( 'CryptocurrencyCheckout', 'cryptocurrencycheckout-wc-gateway' ),
 					'desc_tip'    => true,
 				),
 				
