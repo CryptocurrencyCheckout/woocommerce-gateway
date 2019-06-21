@@ -33,7 +33,7 @@ After the Customer Marks the Payment as sent, the store/seller will verify that 
 
 = More Details =
  - See our [Checkout Demo](https://cryptocurrencycheckout.com/demo) for an example of the Checkout Process.
- - View our [WooCommerce Installation Guide](https://cryptocurrencycheckout.com/)
+ - View our [WooCommerce Installation Guide](https://cryptocurrencycheckout.com/guides/woocommerce)
  - See all available [CryptocurrencyCheckout Integrations](https://cryptocurrencycheckout.com/)
 
 == Installation ==

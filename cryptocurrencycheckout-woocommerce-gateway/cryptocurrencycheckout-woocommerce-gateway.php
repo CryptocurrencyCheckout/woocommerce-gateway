@@ -140,7 +140,7 @@ function cryptocurrencycheckout_gateway_init() {
 					'title'   => __( 'Auto Redirect:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'    => 'checkbox',
 					'label'   => __( 'Automatically Redirects Customer to CryptocurrencyCheckout to pay after placing order.', 'cryptocurrencycheckout-wc-gateway' ),
-					'default' => 'yes'
+					'default' => 'no'
 				),
 
 				'title' => array(
