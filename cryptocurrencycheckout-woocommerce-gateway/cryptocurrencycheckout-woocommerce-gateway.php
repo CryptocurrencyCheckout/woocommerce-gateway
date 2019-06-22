@@ -20,7 +20,6 @@
  * @copyright Copyright (c) 2018-2019 CryptocurrencyCheckout and WooCommerce
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  *
- * This cryptocurrencycheckout gateway forks the WooCommerce core "Cheque" payment gateway to create another cryptocurrencycheckout payment method.
  */
  
 defined( 'ABSPATH' ) or exit;
