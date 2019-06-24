@@ -110,6 +110,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->dashAddress 		= $this->get_option( 'dashAddress' );
 			$this->sendAddress 		= $this->get_option( 'sendAddress' );
 			$this->cdzcAddress 		= $this->get_option( 'cdzcAddress' );
+			$this->arrrAddress 		= $this->get_option( 'arrrAddress' );
 
 		  
 			// Actions
@@ -231,6 +232,14 @@ function cryptocurrencycheckout_gateway_init() {
 					'desc_tip'    => true,
 				),
 
+				'arrrAddress' => array(
+					'title'       => __( 'ARRR Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your CryptoDezireCash Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'APIToken' => array(
 					'title'       => __( 'API Token Keys:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'textarea',
@@ -267,6 +276,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_DASH_ADDRESS'] = $this->dashAddress;
 			$postfields['CC_SEND_ADDRESS'] = $this->sendAddress;
 			$postfields['CC_CDZC_ADDRESS'] = $this->cdzcAddress;
+			$postfields['CC_ARRR_ADDRESS'] = $this->arrrAddress;
 
 			// perform a click action on the submit button of the form you are going to return
 
