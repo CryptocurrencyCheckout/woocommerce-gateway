@@ -15,6 +15,8 @@ This Plugin Connects your WooCommerce Store to the CryptocurrencyCheckout Paymen
 
 == Description ==
 
+Requires WooCommerce 2.1+
+
 This Plugin Connects your WooCommerce Store to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies on your Wordpress Store for free.
 
 You can start accetping Cryptocurrencies like: Bitcoin, Ethereum, Litecoin, Dash, SocialSend CryptoDezireCoin, PirateChain and more all without being charged any middleman fees.
