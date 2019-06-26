@@ -1,6 +1,6 @@
 === CryptocurrencyCheckout Woocommerce Gateway ===
 Contributors: cryptocurrencycheckout
-Donate link: https://example.com/
+Donate link: https://cryptocurrencycheckout.com/
 Tags: cryptocurrency, crypto, checkout, woocommerce, e-commerce, ecommerce, store, payments, gateway, paypal, cryptocurrency checkout, bitcoin, litecoin, ethereum, dash, btc, ltc, eth
 Requires at least: 4.7
 Tested up to: 5.2

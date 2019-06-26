@@ -3,9 +3,8 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Author: CryptocurrencyCheckout
- * Author URI: https://cryptocurrencycheckout.com/
  * Version: 1.0.0
+ * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
  *
@@ -60,19 +59,20 @@ function cryptocurrencycheckout_gateway_plugin_links( $links ) {
 
 	return array_merge( $plugin_links, $links );
 }
+
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'cryptocurrencycheckout_gateway_plugin_links' );
 
 
 /**
  * CryptocurrencyCheckout Payment Gateway
- *
+ * Provides a Payment Gateway Connection to CryptocurrencyCheckout.com; where buyers can make payment in multiple Cryptocurrencies. 
  * We load it later to ensure WC is loaded first since we're extending it.
  *
  * @class 		CryptocurrencyCheckout_WC_Gateway
  * @extends		WC_Payment_Gateway
  * @version		1.0.0
  * @package		WooCommerce/Classes/Payment
- * @author 		SkyVerge
+ * @author 		CryptocurrencyCheckout
  */
 add_action( 'plugins_loaded', 'cryptocurrencycheckout_gateway_init', 11 );
 
@@ -124,6 +124,7 @@ function cryptocurrencycheckout_gateway_init() {
 	
 		/**
 		 * Initialize Gateway Settings Form Fields
+		 * This is where the Store will enter all of their CryptocurrencyCheckout Settings.
 		 */
 		public function init_form_fields() {
 	  
@@ -278,11 +279,13 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_CDZC_ADDRESS'] = $this->cdzcAddress;
 			$postfields['CC_ARRR_ADDRESS'] = $this->arrrAddress;
 
-			// perform a click action on the submit button of the form you are going to return
+			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
 
 			if ( $this->redirect == 'yes' ) {
 			wc_enqueue_js( 'jQuery( "#submit-form" ).click();' );
 			}
+			
+			// Display Payment Button to Customer, clicking this button will HTTP POST and pass the customer to the CryptocurrencyCheckout Payment Gateway.
 
 			$htmlOutput = '<form method="POST" action="' . $url . '">';
 			foreach ($postfields as $k => $v) {
@@ -298,6 +301,8 @@ function cryptocurrencycheckout_gateway_init() {
 	
 		/**
 		 * Process the payment and return the result
+		 *
+		 * This will put the order into on-hold status, reduce inventory levels, and empty customer shopping cart.
 		 *
 		 * @param int $order_id
 		 * @return array
