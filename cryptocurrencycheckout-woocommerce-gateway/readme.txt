@@ -15,14 +15,31 @@ This Plugin Connects your WooCommerce Store to the CryptocurrencyCheckout Paymen
 
 == Description ==
 
-Requires WooCommerce 2.1+
+= Minimum Requirements =
+* PHP 5.2 or greater is recommended
+* WordPress 4.7 or greater is recommended
+* WooCommerce 2.1 or greater is recommended
+
+= What This Plugin Does: =
 
 This Plugin Connects your WooCommerce Store to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies on your Wordpress Store for free.
 
-You can start accetping Cryptocurrencies like: Bitcoin, Ethereum, Litecoin, Dash, SocialSend CryptoDezireCoin, PirateChain and more all without being charged any middleman fees.
+
+= Integrated Cryptocurrencies: =
+* Bitcoin (BTC)
+* Ethereum (ETH)
+* Litecoin (LTC)
+* Dash (Dash)
+* Pirate Chain (ARRR)
+* Social Send (SEND)
+* CryptoDezireCash (CDZC)
+* ColossusXT (COLX)
+* More to Come!
+
+All without being charged any middleman fees!
 
 
-Why use CryptocurrencyCheckout?
+= Why use CryptocurrencyCheckout? =
 
 *   We strive to make accepting Cryptocurrencies as easy as possible, all of our integrations offer copy and paste setup with step by step installation guides.
 *   CryptocurrencyCheckout allows direct Peer to Peer decentralized transactions directly from the Customers Wallet to the Stores Wallet with No Middleman ever in control of your cryptocurrency.
@@ -32,17 +49,18 @@ Why use CryptocurrencyCheckout?
 *   CryptocurrencyCheckout offers unique features like Market Volatility Protection Tools, as well as additional Price Markups, and Discounts to Accept Individual Cryptocurrencies. (More on this later.)
 
 
-Market Volatility Protection Tools:
+= Market Volatility Protection Tools: =
 
 *   Our Volatility Protection Tools helps stores reduce the risk of Accepting Cryptocurrencies, by constantly monitoring the Cryptocurrency Markets.
 *   Watching for things like Real-Time Market Prices, Large Price Movements/Fluctuations, and current Market Buy and Sell Volume.
 *   When enabled this feature will automatically Enable/Disable Cryptocurrency Payment Options for your Customers, as your stores set Cryptocurrency Thresholds are hit.
 
 For instance if you set the Maximum Price Fluctuation settings to disable an individual cryptocurrency payment option if the price goes down more then 1-2%, our platform will automatically disable this cryptocurrency for your customers, asking them to either choose another cryptocurrency to pay with, or pay once price is more stable.
+
 Similarly you can enable the Daily Volume feature where the platform will only enable an individual Cryptocurrency Payment option if the total amount transacted on exchanges that day exceeds your set threshold. This feature is great for automatically disabling cryptocurrencies that might have very little buyer interest at the moment, making it hard to cash out.
 
 
-Individually set Price Markups and Discounts:
+= Individually set Price Markups and Discounts: =
 
 *   When enabled our Markup/Discount feature will allow you to select the option to charge slightly more or offer a small discount for accepting specific cryptocurrencies. 
 *   For instance you could offer a 1% discount if your customer pays in Bitcoin, but charge a 1% price markup if they want to pay in Litecoin.
@@ -57,35 +75,85 @@ Allowing you to more comfortably accept Cryptocurrencies that you might not othe
 
 == Installation ==
 
-Installation is simple. 
+= Minimum Requirements =
+* PHP 5.2 or greater is recommended
+* WordPress 4.7 or greater is recommended
+* WooCommerce 2.1 or greater is recommended
 
-Automatic Installation:
+Visit our [CryptocurrencyCheckout WooCommerce Installation Guide](https://cryptocurrencycheckout.com/guides/woocommerce) for step by step installation details with pictures.
 
-1.   Login to your WordPress Admin Dashboard, click on the Plugins Section, Press "Add New".
-2.   At the Top Left of the Page Click the "Upload Plugin" Button, and upload cryptocurrencycheckout-woocommerce-gateway.zip
-3.   In your Wordpress Admin Dashboard, go to "Plugins" Section, and Click "Installed Plugins", Activate the CryptocurrencyCheckout WooCommerce Gateway.
-4.   Go to the WooCommerce Section, click Settings, Press the "Payments" Tab at the top, Enable CryptocurrencyCheckout, and press Manage.
-5.   Now Create an account at CryptocurrencyCheckout.com, Press "New Connection" enter your Store and Wallet details, save.
-6.   On CryptocurrencyCheckout Navigate to API Keys, generate and Copy the API Key.
-7.   Navigate to Installation Scripts > Store Integrations > WooCommerce, Paste the API Key, and click Generate Scripts.
-8.   Copy and Paste all of the Settings you generated into your WooCommerce Gateway Setup Page, Click Save Changes.
-9.   Create a test order and test the integration.
+= Automatic installation =
+
+Automatic installation is the easiest option -- WordPress will handle the file transfer, and you won’t need to leave your web browser.
+
+* To do an automatic install of the CryptocurrencyCheckout WooCommerce Gateway Plugin, log in to your WordPress dashboard, navigate to the Plugins menu, and click “Add New.”
+
+* In the search field type “CryptocurrencyCheckout,” then click “Search Plugins.” Once you’ve found us, you can view details about it such as the point release, rating, and description. Most importantly of course, you can install it by Clicking “Install Now,” and WordPress will take it from there.
+
+* Go to the WooCommerce Section, click Settings, Press the "Payments" Tab at the top, Enable CryptocurrencyCheckout, and press Manage. 
+
+* (See "Setup Connection" section for connecting to our platform.)
 
 
 
-Manual Installation:
+= Setup Connection =
 
-1.   FTP into your webserver, or use the Cpanel File Manager.
-2.   Go into the public_html/your_wordpress_folder/wp-content/plugins folder.
-3.   Upload the CryptocurrencyCheckout-WooCommerce-Gateway.zip file.
-4.   Extract the zip file contents into the plugins folder. The extracted files should be located at: public_html/your_wordpress_folder/wp-content/plugins/cryptocurrencycheckout-woocommerce-gateway
-5.   In your Wordpress Admin Dashboard, go to "Plugins" Section, and Click "Installed Plugins", Activate the CryptocurrencyCheckout WooCommerce Gateway.
-6.   Go to the WooCommerce Section, click Settings, Press the "Payments" Tab at the top, Enable CryptocurrencyCheckout, and press Manage.
-7.   Now Create an account at CryptocurrencyCheckout.com, Press "New Connection" enter your Store and Wallet details, save.
-8.   On CryptocurrencyCheckout Navigate to API Keys, generate and Copy the API Key.
-9.   Navigate to Installation Scripts > Store Integrations > WooCommerce, Paste the API Key, and click Generate Scripts.
-10.   Copy and Paste all of the Settings you generated into your WooCommerce Gateway Setup Page, Click Save Changes.
-11.   Create a test order and test the integration.
+In this step we will choose what Cryptocurrencies we want to accept, and create our CryptocurrencyCheckout Connection.
+
+* Now Create a free account at CryptocurrencyCheckout.com, in the Dashboard Press "New Connection" enter your Store and Cryptocurrency Wallet details, save.
+
+* On CryptocurrencyCheckout Dashboard Navigate to API Keys, generate and Copy the API Key.
+
+* Navigate to Installation Scripts > Store Integrations > WooCommerce, Paste the API Key, and click Generate Scripts.
+
+* Copy and Paste all of the Settings you generated into your WooCommerce Gateway Setup Page, Click Save Changes.
+
+* Create a test order and test the integration.
+
+
+
+= Manual installation =
+
+In some cases you may have to manually install the plugin, to do so is fairly simple.
+
+* FTP into your webserver, or use the Cpanel File Manager.
+
+
+* Go into the public_html/your_wordpress_folder/wp-content/plugins folder.
+
+
+* Upload the CryptocurrencyCheckout-WooCommerce-Gateway.zip file.
+
+
+* Extract the zip file contents into the plugins folder. The extracted files should be located at: public_html/your_wordpress_folder/wp-content/plugins/cryptocurrencycheckout-woocommerce-gateway
+
+
+* In your Wordpress Admin Dashboard, go to "Plugins" Section, and Click "Installed Plugins", Activate the CryptocurrencyCheckout WooCommerce Gateway.
+
+
+* Go to the WooCommerce Section, click Settings, Press the "Payments" Tab at the top, Enable CryptocurrencyCheckout, and press Manage.
+
+
+* (See "Setup Connection" section for connecting to our platform.)
+
+
+
+
+
+== Screenshots ==
+
+1. WooCommerce Checkout Page Example.
+
+2. WooCommerce Thank You Page Example.
+
+3. CryptocurrencyCheckout Select Payment Method Page Example.
+
+4. CryptocurrencyCheckout Complete Payment Page Example.
+
+5. WooCommerce Dashboard, Enable CryptocurrencyCheckout.
+
+6. WooCommerce Dashboard input Connection Settings Generated in CryptocurrencyCheckout Dashboard.
+
 
 
 
@@ -94,9 +162,9 @@ Manual Installation:
 
 = Is it difficult to use your Platform? =
 
-Not at all, we work very hard to make sure our customers with even little to no coding experience can easily integrate our platform into their stores.
-Most our integrations are completely copy and paste, and we will pre-generate all the code/scripts/plugins necessary to install into your shop. 
-We also provide helpful step by step guides with photo's to walk you through the process, if you still have questions or issues, just send us a message!
+* Not at all, we work very hard to make sure our customers with even little to no coding experience can easily integrate our platform into their stores.
+* Most our integrations are completely copy and paste, and we will pre-generate all the code/scripts/plugins necessary to install into your shop. 
+* We also provide helpful step by step guides with photo's to walk you through the process, if you still have questions or issues, just send us a message!
 
 = Is there a lot of steps to install this plugin? =
 
@@ -107,12 +175,12 @@ We also provide helpful step by step guides with photo's to walk you through the
 
 = Do you Charge Monthly Fees or Transaction Fees? =
 
-No, we never charge our stores or their customers any fees to use our platform. The only fee's you or your customer will ever experience is the individual Cryptocurrencies Transaction/Mining fees that the cryptocurrency charges to maintain their blockchain.
+* No, we never charge our stores or their customers any fees to use our platform. The only fee's you or your customer will ever experience is the individual Cryptocurrencies Transaction/Mining fees that the cryptocurrency charges to maintain their blockchain.
 
 = Is there any Middleman in control of my coins? =
 
-No, our platform is unique because it allows completely decentralized peer to peer transactions. You can use any personal wallet of your choosing and keep your coins on your own devices.
-Allowing your customer to pay you directly, avoiding any middleman in control of your coins as typically found with other Payment Gateways.
+* No, our platform is unique because it allows completely decentralized peer to peer transactions. You can use any personal wallet of your choosing and keep your coins on your own devices.
+* Allowing your customer to pay you directly, avoiding any middleman in control of your coins as typically found with other Payment Gateways.
 
 
 

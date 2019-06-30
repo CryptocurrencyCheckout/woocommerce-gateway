@@ -111,6 +111,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->sendAddress 		= $this->get_option( 'sendAddress' );
 			$this->cdzcAddress 		= $this->get_option( 'cdzcAddress' );
 			$this->arrrAddress 		= $this->get_option( 'arrrAddress' );
+			$this->colxAddress 		= $this->get_option( 'colxAddress' );
 
 		  
 			// Actions
@@ -236,7 +237,15 @@ function cryptocurrencycheckout_gateway_init() {
 				'arrrAddress' => array(
 					'title'       => __( 'ARRR Address:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'text',
-					'description' => __( 'Enter your CryptoDezireCash Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'description' => __( 'Enter your PirateChain Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'colxAddress' => array(
+					'title'       => __( 'COLX Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your ColossusXT Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
 					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
 					'desc_tip'    => true,
 				),
@@ -278,6 +287,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_SEND_ADDRESS'] = $this->sendAddress;
 			$postfields['CC_CDZC_ADDRESS'] = $this->cdzcAddress;
 			$postfields['CC_ARRR_ADDRESS'] = $this->arrrAddress;
+			$postfields['CC_COLX_ADDRESS'] = $this->colxAddress;
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
 
