@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 3.6.4
- - Stable Tag: 1.0.0
+ - Stable Tag: 1.0.3
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -52,3 +52,9 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2019.06.19 - version 1.0.0 =
  * Initial Release
+
+= 2019.07.01 - version 1.0.2 =
+ * Add Cryptocurrencies: COLX to plugin
+
+= 2019.07.20 - version 1.0.3 =
+ * Add Cryptocurrencies: ZNZ to plugin
