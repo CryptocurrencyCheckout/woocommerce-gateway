@@ -3,7 +3,7 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
@@ -113,6 +113,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->arrrAddress 		= $this->get_option( 'arrrAddress' );
 			$this->colxAddress 		= $this->get_option( 'colxAddress' );
 			$this->znzAddress 		= $this->get_option( 'znzAddress' );
+			$this->thcAddress 		= $this->get_option( 'thcAddress' );
 
 		  
 			// Actions
@@ -259,6 +260,14 @@ function cryptocurrencycheckout_gateway_init() {
 					'desc_tip'    => true,
 				),
 
+				'thcAddress' => array(
+					'title'       => __( 'THC Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your HempCoin Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'APIToken' => array(
 					'title'       => __( 'API Token Keys:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'textarea',
@@ -298,6 +307,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_ARRR_ADDRESS'] = $this->arrrAddress;
 			$postfields['CC_COLX_ADDRESS'] = $this->colxAddress;
 			$postfields['CC_ZNZ_ADDRESS'] = $this->znzAddress;
+			$postfields['CC_THC_ADDRESS'] = $this->thcAddress;
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
 
