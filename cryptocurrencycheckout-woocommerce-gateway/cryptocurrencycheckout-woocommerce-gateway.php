@@ -3,7 +3,7 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Version: 1.0.7
+ * Version: 1.0.8
  * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
@@ -124,6 +124,9 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->arkAddress 		= $this->get_option( 'arkAddress' );
 			$this->veilAddress 		= $this->get_option( 'veilAddress' );
 			$this->dogeAddress 		= $this->get_option( 'dogeAddress' );
+			$this->nbxAddress 		= $this->get_option( 'nbxAddress' );
+			$this->xnvAddress 		= $this->get_option( 'xnvAddress' );
+			$this->sumoAddress 		= $this->get_option( 'sumoAddress' );
 		  
 			// Actions
 			add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
@@ -357,6 +360,30 @@ function cryptocurrencycheckout_gateway_init() {
 					'desc_tip'    => true,
 				),
 
+				'nbxAddress' => array(
+					'title'       => __( 'NBX Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Netbox Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'xnvAddress' => array(
+					'title'       => __( 'XNV Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Nerva Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'sumoAddress' => array(
+					'title'       => __( 'SUMO Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Sumokoin Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'APIToken' => array(
 					'title'       => __( 'API Token Keys:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'textarea',
@@ -385,7 +412,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_STORE_ID'] = $this->StoreID;
 			$postfields['CC_CONNECTION_ID'] = $this->ConnectionID;
 			$postfields['CC_API_TOKEN'] = $this->APIToken;
-			$postfields['CC_ORDER_ID'] = $order->id;
+			$postfields['CC_ORDER_ID'] = $order->get_id();
 			$postfields['CC_GRANDTOTAL'] = $order->get_total();
 			$postfields['CC_BTC_ADDRESS'] = $this->btcAddress;
 			$postfields['CC_ETH_ADDRESS'] = $this->ethAddress;
@@ -407,6 +434,9 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_ARK_ADDRESS'] = $this->arkAddress;
 			$postfields['CC_VEIL_ADDRESS'] = $this->veilAddress;
 			$postfields['CC_DOGE_ADDRESS'] = $this->dogeAddress;
+			$postfields['CC_NBX_ADDRESS'] = $this->nbxAddress;
+			$postfields['CC_XNV_ADDRESS'] = $this->xnvAddress;
+			$postfields['CC_SUMO_ADDRESS'] = $this->sumoAddress;
 
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
