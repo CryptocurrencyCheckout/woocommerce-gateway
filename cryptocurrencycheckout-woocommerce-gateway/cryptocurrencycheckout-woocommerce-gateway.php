@@ -3,7 +3,7 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Version: 1.0.8
+ * Version: 1.0.9
  * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
@@ -127,6 +127,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->nbxAddress 		= $this->get_option( 'nbxAddress' );
 			$this->xnvAddress 		= $this->get_option( 'xnvAddress' );
 			$this->sumoAddress 		= $this->get_option( 'sumoAddress' );
+			$this->rpdAddress 		= $this->get_option( 'rpdAddress' );
 		  
 			// Actions
 			add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
@@ -384,6 +385,14 @@ function cryptocurrencycheckout_gateway_init() {
 					'desc_tip'    => true,
 				),
 
+				'rpdAddress' => array(
+					'title'       => __( 'RPD Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Rapids Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'APIToken' => array(
 					'title'       => __( 'API Token Keys:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'textarea',
@@ -437,6 +446,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_NBX_ADDRESS'] = $this->nbxAddress;
 			$postfields['CC_XNV_ADDRESS'] = $this->xnvAddress;
 			$postfields['CC_SUMO_ADDRESS'] = $this->sumoAddress;
+			$postfields['CC_RPD_ADDRESS'] = $this->rpdAddress;
 
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout

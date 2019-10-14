@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 3.6.4
- - Stable Tag: 1.0.8
+ - Stable Tag: 1.0.9
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -71,5 +71,8 @@ Please do! We'd like to see the changes and different methods people come up for
   = 2019.08.23 - version 1.0.7 =
  * Add Cryptocurrencies: ETHPLO, ARK, VEIL, DOGE to plugin
  
-   = 2019.09.07 - version 1.0.8 =
+   = 2019.10.07 - version 1.0.8 =
  * Add Cryptocurrencies: NBX, XNV, SUMO to plugin
+
+    = 2019.10.14 - version 1.0.9 =
+ * Add Cryptocurrencies: RPD to plugin
