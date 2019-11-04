@@ -476,7 +476,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_RPD_ADDRESS'] = $this->rpdAddress;
 			$postfields['CC_TELOS_ADDRESS'] = $this->telosAddress;
 			$postfields['CC_KMD_ADDRESS'] = $this->kmdAddress;
-			$postfields['CC_VERUS_ADDRESS'] = $this->vrscAddress;
+			$postfields['CC_VRSC_ADDRESS'] = $this->vrscAddress;
 
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
