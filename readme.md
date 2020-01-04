@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 3.6.4
- - Stable Tag: 1.1.1
+ - Stable Tag: 1.1.2
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -82,3 +82,6 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2019.11.23 - version 1.1.1 =
 * Add Cryptocurrencies: BAN to plugin
+
+= 2020.01.04 - version 1.1.2 =
+* Add Cryptocurrencies: XBTX to plugin
