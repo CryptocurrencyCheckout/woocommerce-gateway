@@ -4,7 +4,7 @@ Donate link: https://cryptocurrencycheckout.com/
 Tags: cryptocurrency, crypto, checkout, woocommerce, e-commerce, ecommerce, store, payments, gateway, paypal, cryptocurrency checkout, bitcoin, litecoin, ethereum, dash, btc, ltc, eth
 Requires at least: 4.7
 Tested up to: 5.2
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 Requires PHP: 5.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -55,6 +55,8 @@ This Plugin Connects your WooCommerce Store to the CryptocurrencyCheckout Paymen
 * Verus (VRSC)
 * Banano (BAN)
 * Bitcoin-Subsidium (XBTX)
+* Sinovate (SIN)
+* Ripple (XRP)
 * More to Come!
 
 All without being charged any middleman fees!
@@ -258,3 +260,7 @@ In some cases you may have to manually install the plugin, to do so is fairly si
 = 1.1.2 =
 
 * Add Cryptocurrencies: XBTX to plugin
+
+= 1.1.3 =
+
+* Add Cryptocurrencies: SIN and XRP to plugin
