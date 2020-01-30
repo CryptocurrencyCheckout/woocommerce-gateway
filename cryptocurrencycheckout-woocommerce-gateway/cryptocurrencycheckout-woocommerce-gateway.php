@@ -3,7 +3,7 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Version: 1.1.3
+ * Version: 1.1.4
  * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
@@ -16,7 +16,7 @@
  * @package   WC-CryptocurrencyCheckout-Gateway
  * @author    CryptocurrencyCheckout
  * @category  Admin
- * @copyright Copyright (c) 2018-2019 CryptocurrencyCheckout and WooCommerce
+ * @copyright Copyright (c) 2018-2020 CryptocurrencyCheckout and WooCommerce
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  *
  */
@@ -135,6 +135,8 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->xbtxAddress 		= $this->get_option( 'xbtxAddress' );
 			$this->sinAddress 		= $this->get_option( 'sinAddress' );
 			$this->xrpAddress 		= $this->get_option( 'xrpAddress' );
+			$this->upxAddress 		= $this->get_option( 'upxAddress' );
+			$this->adcAddress 		= $this->get_option( 'adcAddress' );
 		  
 			// Actions
 			add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
@@ -456,6 +458,22 @@ function cryptocurrencycheckout_gateway_init() {
 					'desc_tip'    => true,
 				),
 
+				'upxAddress' => array(
+					'title'       => __( 'UPX Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Uplexa Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'adcAddress' => array(
+					'title'       => __( 'ADC Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Audiocoin Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'APIToken' => array(
 					'title'       => __( 'API Token Keys:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'textarea',
@@ -517,6 +535,8 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_XBTX_ADDRESS'] = $this->xbtxAddress;
 			$postfields['CC_SIN_ADDRESS'] = $this->sinAddress;
 			$postfields['CC_XRP_ADDRESS'] = $this->xrpAddress;
+			$postfields['CC_UPX_ADDRESS'] = $this->upxAddress;
+			$postfields['CC_ADC_ADDRESS'] = $this->adcAddress;
 
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
