@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 3.6.4
- - Stable Tag: 1.1.4
+ - Stable Tag: 1.1.5
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -91,3 +91,6 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2020.01.30 - version 1.1.4 =
 * Add Cryptocurrencies: UPX & ADC to plugin
+
+= 2020.02.11 - version 1.1.5 =
+* Add Cryptocurrencies: RITO to plugin
