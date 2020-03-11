@@ -3,7 +3,7 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Version: 1.1.5
+ * Version: 1.1.6
  * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
@@ -138,6 +138,8 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->upxAddress 		= $this->get_option( 'upxAddress' );
 			$this->adcAddress 		= $this->get_option( 'adcAddress' );
 			$this->ritoAddress 		= $this->get_option( 'ritoAddress' );
+			$this->birAddress 		= $this->get_option( 'birAddress' );
+			$this->axeAddress 		= $this->get_option( 'axeAddress' );
 		  
 			// Actions
 			add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
@@ -483,6 +485,22 @@ function cryptocurrencycheckout_gateway_init() {
 					'desc_tip'    => true,
 				),
 
+				'birAddress' => array(
+					'title'       => __( 'BIR Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Birake Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'axeAddress' => array(
+					'title'       => __( 'AXE Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Axe Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'APIToken' => array(
 					'title'       => __( 'API Token Keys:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'textarea',
@@ -547,6 +565,8 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_UPX_ADDRESS'] = $this->upxAddress;
 			$postfields['CC_ADC_ADDRESS'] = $this->adcAddress;
 			$postfields['CC_RITO_ADDRESS'] = $this->ritoAddress;
+			$postfields['CC_BIR_ADDRESS'] = $this->birAddress;
+			$postfields['CC_AXE_ADDRESS'] = $this->axeAddress;
 
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
