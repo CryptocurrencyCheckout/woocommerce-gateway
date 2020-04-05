@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 3.6.4
- - Stable Tag: 1.1.6
+ - Stable Tag: 1.1.7
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -97,3 +97,6 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2020.03.10 - version 1.1.6 =
 * Add Cryptocurrencies: BIR and AXE to plugin
+
+= 2020.04.05 - version 1.1.7 =
+* Add Cryptocurrencies: HUSH to plugin
