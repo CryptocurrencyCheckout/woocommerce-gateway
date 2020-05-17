@@ -3,7 +3,7 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Version: 1.1.7
+ * Version: 1.1.8
  * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
@@ -141,6 +141,9 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->birAddress 		= $this->get_option( 'birAddress' );
 			$this->axeAddress 		= $this->get_option( 'axeAddress' );
 			$this->hushAddress 		= $this->get_option( 'hushAddress' );
+			$this->ccyAddress 		= $this->get_option( 'ccyAddress' );
+			$this->motaAddress 		= $this->get_option( 'motaAddress' );
+			$this->pgoAddress 		= $this->get_option( 'pgoAddress' );
 		  
 			// Actions
 			add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
@@ -510,6 +513,30 @@ function cryptocurrencycheckout_gateway_init() {
 					'desc_tip'    => true,
 				),
 
+				'ccyAddress' => array(
+					'title'       => __( 'CCY Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your CCY Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'motaAddress' => array(
+					'title'       => __( 'MOTA Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your MotaCoin Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'pgoAddress' => array(
+					'title'       => __( 'PGO Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Pengolin Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'APIToken' => array(
 					'title'       => __( 'API Token Keys:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'textarea',
@@ -577,6 +604,9 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_BIR_ADDRESS'] = $this->birAddress;
 			$postfields['CC_AXE_ADDRESS'] = $this->axeAddress;
 			$postfields['CC_HUSH_ADDRESS'] = $this->hushAddress;
+			$postfields['CC_CCY_ADDRESS'] = $this->ccyAddress;
+			$postfields['CC_MOTA_ADDRESS'] = $this->motaAddress;
+			$postfields['CC_PGO_ADDRESS'] = $this->pgoAddress;
 
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout

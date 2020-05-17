@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 3.6.4
- - Stable Tag: 1.1.7
+ - Stable Tag: 1.1.8
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -100,3 +100,6 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2020.04.05 - version 1.1.7 =
 * Add Cryptocurrencies: HUSH to plugin
+
+= 2020.05.17 - version 1.1.8 =
+* Add Cryptocurrencies: CCY, MOTA, PGO to plugin
