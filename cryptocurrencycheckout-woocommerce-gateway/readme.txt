@@ -4,7 +4,7 @@ Donate link: https://cryptocurrencycheckout.com/
 Tags: cryptocurrency, crypto, checkout, woocommerce, e-commerce, ecommerce, store, payments, gateway, paypal, cryptocurrency checkout, bitcoin, litecoin, ethereum, dash, btc, ltc, eth
 Requires at least: 4.7
 Tested up to: 5.4
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 Requires PHP: 5.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -66,6 +66,7 @@ This Plugin Connects your WooCommerce Store to the CryptocurrencyCheckout Paymen
 * Cryptocurrency (CCY)
 * MotaCoin (MOTA)
 * PengolinCoin (PGO)
+* BitGreen (BITG)
 
 * More to Come!
 
@@ -294,3 +295,7 @@ In some cases you may have to manually install the plugin, to do so is fairly si
 = 1.1.8 =
 
 * Add Cryptocurrencies: CCY, MOTA, PGO to plugin
+
+= 1.1.9 =
+
+* Add Cryptocurrencies: BITG to plugin

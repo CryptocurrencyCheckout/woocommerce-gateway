@@ -3,7 +3,7 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Version: 1.1.8
+ * Version: 1.1.9
  * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
@@ -144,6 +144,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->ccyAddress 		= $this->get_option( 'ccyAddress' );
 			$this->motaAddress 		= $this->get_option( 'motaAddress' );
 			$this->pgoAddress 		= $this->get_option( 'pgoAddress' );
+			$this->bitgAddress 		= $this->get_option( 'bitgAddress' );
 		  
 			// Actions
 			add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
@@ -537,6 +538,14 @@ function cryptocurrencycheckout_gateway_init() {
 					'desc_tip'    => true,
 				),
 
+				'bitgAddress' => array(
+					'title'       => __( 'BITG Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your BitGreen Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'APIToken' => array(
 					'title'       => __( 'API Token Keys:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'textarea',
@@ -607,6 +616,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_CCY_ADDRESS'] = $this->ccyAddress;
 			$postfields['CC_MOTA_ADDRESS'] = $this->motaAddress;
 			$postfields['CC_PGO_ADDRESS'] = $this->pgoAddress;
+			$postfields['CC_BITG_ADDRESS'] = $this->bitgAddress;
 
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
