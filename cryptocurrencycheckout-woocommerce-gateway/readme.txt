@@ -4,7 +4,7 @@ Donate link: https://cryptocurrencycheckout.com/
 Tags: cryptocurrency, crypto, checkout, woocommerce, e-commerce, ecommerce, store, payments, gateway, paypal, cryptocurrency checkout, bitcoin, litecoin, ethereum, dash, btc, ltc, eth
 Requires at least: 4.7
 Tested up to: 5.4
-Stable tag: 1.2.2
+Stable tag: 2.0.0
 Requires PHP: 5.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -20,9 +20,24 @@ This Plugin Connects your WooCommerce Store to the CryptocurrencyCheckout Paymen
 * WordPress 4.7 or greater is recommended
 * WooCommerce 2.1 or greater is recommended
 
-= What This Plugin Does: =
 
-This Plugin Connects your WooCommerce Store to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies on your Wordpress Store for free.
+[Installation Guide](https://cryptocurrencycheckout.com/guides/woocommerce)
+
+
+= What This Plugin Does: =
+This Plugin Connects your WooCommerce Store to the CryptocurrencyCheckout.com Payment Gateway so you can start accepting Cryptocurrencies on your Wordpress Store for free.
+
+
+= No Middleman or Third Party Risk: =
+CryptocurrencyCheckout.com allows direct Peer to Peer, and fully decentralized transactions. This means that your Customer pays directly from their Personal Wallet to Your Stores Personal Wallet all with No Middleman ever in control of your cryptocurrencies.
+
+
+= How much does it cost?: =
+Free! - We never charge stores or their customers any transaction, maintenance or monthly fee's to use our platform.
+
+
+= How does it work?: =
+When an order is submitted via the CryptocurrencyCheckout payment method, the order will be placed "on-hold" inside your WooCommerce Stores Dashboard. The customer will then be passed to the CryptocurrencyCheckout.com Payment Gateway, where they can choose between all the accepted cryptocurrencies you have enabled, the gateway will then manage all real-time market price calculations/conversions, provide the customer with multiple quick and easy ways to pay including 1-Click Wallet Payments, QR Codes for Mobile, or Copy and Paste options for Exchanges/Web Wallets. After the Customer marks the Payment as sent, the store/seller will verify that the coins have arrived in their wallets, and mark the order as Processing/Completed in their WooCommerce Dashboard.
 
 
 = Integrated Cryptocurrencies: =
@@ -30,6 +45,8 @@ This Plugin Connects your WooCommerce Store to the CryptocurrencyCheckout Paymen
 * Ethereum (ETH)
 * Litecoin (LTC)
 * Dash (Dash)
+* Ripple (XRP)
+* Dogecoin (DOGE)
 * Pirate Chain (ARRR)
 * Social Send (SEND)
 * CryptoDezireCash (CDZC)
@@ -45,7 +62,6 @@ This Plugin Connects your WooCommerce Store to the CryptocurrencyCheckout Paymen
 * ETHplode (ETHPLO)
 * Aark (ARK)
 * Veil (VEIL)
-* Dogecoin (DOGE)
 * Netbox (NBX)
 * Nerva (xnv)
 * Sumokoin (SUMO)
@@ -56,7 +72,6 @@ This Plugin Connects your WooCommerce Store to the CryptocurrencyCheckout Paymen
 * Banano (BAN)
 * Bitcoin-Subsidium (XBTX)
 * Sinovate (SIN)
-* Ripple (XRP)
 * Uplexa (UPX)
 * AudioCoin (ADC)
 * RitoCoin (RITO)
@@ -75,7 +90,7 @@ This Plugin Connects your WooCommerce Store to the CryptocurrencyCheckout Paymen
 
 * More to Come!
 
-All without being charged any middleman fees!
+Want another coin added? 
 
 
 = Why use CryptocurrencyCheckout? =
@@ -90,7 +105,7 @@ All without being charged any middleman fees!
 
 = Market Volatility Protection Tools: =
 
-*   Our Volatility Protection Tools helps stores reduce the risk of Accepting Cryptocurrencies, by constantly monitoring the Cryptocurrency Markets.
+*   Our Volatility Protection Tools helps Stores reduce the risk of Accepting Cryptocurrencies, by constantly monitoring the Cryptocurrency Markets.
 *   Watching for things like Real-Time Market Prices, Large Price Movements/Fluctuations, and current Market Buy and Sell Volume.
 *   When enabled this feature will automatically Enable/Disable Cryptocurrency Payment Options for your Customers, as your stores set Cryptocurrency Thresholds are hit.
 
@@ -215,6 +230,7 @@ In some cases you may have to manually install the plugin, to do so is fairly si
 = Do you Charge Monthly Fees or Transaction Fees? =
 
 * No, we never charge our stores or their customers any fees to use our platform. The only fee's you or your customer will ever experience is the individual Cryptocurrencies Transaction/Mining fees that the cryptocurrency charges to maintain their blockchain.
+* How do you keep your service free for stores/customers? Our platform is currently supported by the Cryptocurrency Projects, rather than by their communities that accept their coins.
 
 = Is there any Middleman in control of my coins? =
 
@@ -316,3 +332,7 @@ In some cases you may have to manually install the plugin, to do so is fairly si
 = 1.2.2 =
 
 * Add Cryptocurrencies: DMS, DAPS to plugin
+
+= 2.0.0 =
+
+* Add Optional Payment Button to Order Emails, Fix Depreciated Warning, Bug Fixes.

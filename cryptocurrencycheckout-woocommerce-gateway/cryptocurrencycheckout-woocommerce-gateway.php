@@ -3,7 +3,7 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Version: 1.2.2
+ * Version: 2.0.0
  * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
@@ -102,6 +102,8 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->StoreName 		= $this->get_option( 'StoreName' );
 			$this->StoreID 			= $this->get_option( 'StoreID' );
 			$this->ConnectionID 	= $this->get_option( 'ConnectionID' );
+			$this->emailButton		= $this->get_option( 'emailButton' );
+			$this->Instructions 	= $this->get_option( 'Instructions' );
 			$this->APIToken 		= $this->get_option( 'APIToken' );
 
 			$this->btcAddress 		= $this->get_option( 'btcAddress' );
@@ -158,7 +160,8 @@ function cryptocurrencycheckout_gateway_init() {
 			// Customer Emails
 			add_action( 'woocommerce_email_before_order_table', array( $this, 'email_instructions' ), 10, 3 );
 		}
-	
+
+		
 	
 		/**
 		 * Initialize Gateway Settings Form Fields
@@ -169,7 +172,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->form_fields = apply_filters( 'cryptocurrencycheckout_form_fields', array(
 		  
 				'enabled' => array(
-					'title'   => __( 'Enable/Disable', 'cryptocurrencycheckout-wc-gateway' ),
+					'title'   => __( 'Enable/Disable:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'    => 'checkbox',
 					'label'   => __( 'Enable CryptocurrencyCheckout', 'cryptocurrencycheckout-wc-gateway' ),
 					'default' => 'yes'
@@ -178,12 +181,27 @@ function cryptocurrencycheckout_gateway_init() {
 				'redirect' => array(
 					'title'   => __( 'Auto Redirect:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'    => 'checkbox',
-					'label'   => __( 'Automatically Redirects Customer to CryptocurrencyCheckout to pay after placing order.', 'cryptocurrencycheckout-wc-gateway' ),
+					'label'   => __( 'Automatically Redirect Customer to CryptocurrencyCheckout to pay after placing an order. (Disable for testing/troubleshooting)', 'cryptocurrencycheckout-wc-gateway' ),
 					'default' => 'no'
 				),
 
+				'emailButton' => array(
+					'title'   => __( 'Email Payment Button:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'    => 'checkbox',
+					'label'   => __( 'This option adds a fallback Pay Now button to the order email, in case the customer needs to attempt to make payment a 2nd time.', 'cryptocurrencycheckout-wc-gateway' ),
+					'default' => 'yes'
+				),
+
+				'Instructions' => array(
+					'title'       => __( 'Email Payment Instructions:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'textarea',
+					'description' => __( 'If the above Email Payment Button is enabled these instructions will display in the Order Email, instructing the customer they can attempt to pay again if they failed to pay during checkout.', 'cryptocurrencycheckout-wc-gateway' ),
+					'default'     => __( 'If you have not made payment yet, please click the button below to make your crypto payment now.', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'title' => array(
-					'title'       => __( 'Title', 'cryptocurrencycheckout-wc-gateway' ),
+					'title'       => __( 'Title:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'text',
 					'description' => __( 'This controls the title for the payment method the customer sees during checkout.', 'cryptocurrencycheckout-wc-gateway' ),
 					'default'     => __( 'CryptocurrencyCheckout', 'cryptocurrencycheckout-wc-gateway' ),
@@ -621,6 +639,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_API_TOKEN'] = $this->APIToken;
 			$postfields['CC_ORDER_ID'] = $order->get_id();
 			$postfields['CC_GRANDTOTAL'] = $order->get_total();
+
 			$postfields['CC_BTC_ADDRESS'] = $this->btcAddress;
 			$postfields['CC_ETH_ADDRESS'] = $this->ethAddress;
 			$postfields['CC_LTC_ADDRESS'] = $this->ltcAddress;
@@ -668,18 +687,19 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_DMS_ADDRESS'] = $this->dmsAddress;
 			$postfields['CC_DAPS_ADDRESS'] = $this->dapsAddress;
 
-
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
-
 			if ( $this->redirect == 'yes' ) {
 			wc_enqueue_js( 'jQuery( "#submit-form" ).click();' );
 			}
 			
 			// Display Payment Button to Customer, clicking this button will HTTP POST and pass the customer to the CryptocurrencyCheckout Payment Gateway.
-
 			$htmlOutput = '<form method="POST" action="' . $url . '">';
 			foreach ($postfields as $k => $v) {
-				$htmlOutput .= '<input type="hidden" name="' . $k . '" value="' . $v . '">';
+				if (empty($v)){
+					//if empty, skip.
+				} else {
+					$htmlOutput .= '<input type="hidden" name="' . $k . '" value="' . $v . '">';
+				}
 			}
 			$htmlOutput .= '<input type="submit" id="submit-form" value="' . $this->payNow . '">';
 			$htmlOutput .= '</form>';
@@ -687,11 +707,107 @@ function cryptocurrencycheckout_gateway_init() {
 			echo $htmlOutput;
 			
 		}
+
+
+
+		/**
+		 * Add content to the WC emails.
+		 *
+		 * @since 2.0.0
+		 * @access public
+		 * @param WC_Order $order
+		 * @param bool $sent_to_admin
+		 * @param bool $plain_text
+		 */
+
+		public function email_instructions( $order, $sent_to_admin, $plain_text = false ) {
+
+			
+			if ($this->emailButton === 'yes' && ! $sent_to_admin && $this->id === $order->get_payment_method() && $order->has_status('on-hold')) {
+
+				// POST Fields
+				$url = 'https://cryptocurrencycheckout.com/email/validation';
+				$api = $this->APIToken;
+
+				$postfields = array();
+				$postfields['SN'] = $this->StoreName;
+				$postfields['SI'] = $this->StoreID;
+				$postfields['CI'] = $this->ConnectionID;
+				$postfields['OI'] = $order->get_id();
+				$postfields['OT'] = $order->get_total();
+
+				$postfields['BTC'] = $this->btcAddress;
+				$postfields['ETH'] = $this->ethAddress;
+				$postfields['LTC'] = $this->ltcAddress;
+				$postfields['DASH'] = $this->dashAddress;
+				$postfields['SEND'] = $this->sendAddress;
+				$postfields['CDZC'] = $this->cdzcAddress;
+				$postfields['ARRR'] = $this->arrrAddress;
+				$postfields['COLX'] = $this->colxAddress;
+				$postfields['ZNZ'] = $this->znzAddress;
+				$postfields['THC'] = $this->thcAddress;
+				$postfields['ECA'] = $this->ecaAddress;
+				$postfields['PIVX'] = $this->pivxAddress;
+				$postfields['NBR'] = $this->nbrAddress;
+				$postfields['GALI'] = $this->galiAddress;
+				$postfields['BITC'] = $this->bitcAddress;
+				$postfields['OK'] = $this->okAddress;
+				$postfields['ETHPLO'] = $this->ethploAddress;
+				$postfields['ARK'] = $this->arkAddress;
+				$postfields['VEIL'] = $this->veilAddress;
+				$postfields['DOGE'] = $this->dogeAddress;
+				$postfields['NBX'] = $this->nbxAddress;
+				$postfields['XNV'] = $this->xnvAddress;
+				$postfields['SUMO'] = $this->sumoAddress;
+				$postfields['RPD'] = $this->rpdAddress;
+				$postfields['TELOS'] = $this->telosAddress;
+				$postfields['KMD'] = $this->kmdAddress;
+				$postfields['VRSC'] = $this->vrscAddress;
+				$postfields['BAN'] = $this->banAddress;
+				$postfields['XBTX'] = $this->xbtxAddress;
+				$postfields['SIN'] = $this->sinAddress;
+				$postfields['XRP'] = $this->xrpAddress;
+				$postfields['UPX'] = $this->upxAddress;
+				$postfields['ADC'] = $this->adcAddress;
+				$postfields['RITO'] = $this->ritoAddress;
+				$postfields['BIR'] = $this->birAddress;
+				$postfields['AXE'] = $this->axeAddress;
+				$postfields['HUSH'] = $this->hushAddress;
+				$postfields['CCY'] = $this->ccyAddress;
+				$postfields['MOTA'] = $this->motaAddress;
+				$postfields['PGO'] = $this->pgoAddress;
+				$postfields['BITG'] = $this->bitgAddress;
+				$postfields['GRT'] = $this->grtAddress;
+				$postfields['NULS'] = $this->nulsAddress;
+				$postfields['AUDAX'] = $this->audaxAddress;
+				$postfields['DMS'] = $this->dmsAddress;
+				$postfields['DAPS'] = $this->dapsAddress;
+	
+				$htmlOutput ='<div style="padding-top: 20px; padding-bottom: 20px;">';
+				$htmlOutput .= '' . $this->Instructions . '<br><br>';
+				$htmlOutput .= '<a href="' . $url . '?AI=' . $api . '';
+
+				foreach ($postfields as $k => $v) {
+					if (empty($v)){
+						//if empty, skip.
+					} else {
+						$htmlOutput .= '&' . $k . '=' . $v;
+					}
+				}
+
+				$htmlOutput .= '" >';
+				$htmlOutput .= '<button style="background-color: #007bff; color: white; font-size: 16px; padding: 8px 20px; border-radius: 6px;">'. $this->payNow .'</button>';
+				$htmlOutput .= '</a></div>';
+	
+				echo $htmlOutput;
+
+			}
+			
+		}
 	
 	
 		/**
 		 * Process the payment and return the result
-		 *
 		 * This will put the order into on-hold status, reduce inventory levels, and empty customer shopping cart.
 		 *
 		 * @param int $order_id
@@ -705,7 +821,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$order->update_status( 'on-hold', __( 'Awaiting cryptocurrencycheckout payment', 'cryptocurrencycheckout-wc-gateway' ) );
 			
 			// Reduce stock levels
-			$order->reduce_order_stock();
+			wc_reduce_stock_levels($order_id);
 			
 			// Remove cart
 			WC()->cart->empty_cart();

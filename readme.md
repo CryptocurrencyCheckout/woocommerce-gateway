@@ -4,12 +4,12 @@
  - Tags: woocommerce, payment gateway, gateway, accept cryptocurrency, crypto, bitcoin, litecoin, ethereum, dash, more.
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
- - Tested WooCommerce up to: 3.6.4
- - Stable Tag: 1.2.2
+ - Tested WooCommerce up to: 4.3.0
+ - Stable Tag: 2.0.0
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
-> **Requires: WooCommerce 2.1+**
+> **Requires: WooCommerce 2.1+ or greater**
 
 == Description ==
 
@@ -31,7 +31,7 @@ The customer will then be passed to the CryptocurrencyCheckout Payment Gateway, 
 
 After the Customer Marks the Payment as sent, the store/seller will verify that the coins have arrived in their wallets, and mark the order as Processing/Completed in their WooCommerce Dashboard
 
-= More Details =
+== More Details ==
  - See our [Checkout Demo](https://cryptocurrencycheckout.com/demo) for an example of the Checkout Process.
  - View our [WooCommerce Installation Guide](https://cryptocurrencycheckout.com/guides/woocommerce)
  - See all available [CryptocurrencyCheckout Integrations](https://cryptocurrencycheckout.com/)
@@ -115,3 +115,6 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2020.07.01 - version 1.2.2 =
 * Add Cryptocurrencies: DMS, DAPS to plugin
+
+= 2020.07.15 - version 2.0.0 =
+* Add Optional Payment Button to Order Emails, Fix Depreciated Warning, Bug Fixes.
