@@ -4,7 +4,7 @@ Donate link: https://cryptocurrencycheckout.com/
 Tags: cryptocurrency, crypto, checkout, woocommerce, e-commerce, ecommerce, store, payments, gateway, paypal, cryptocurrency checkout, bitcoin, litecoin, ethereum, dash, btc, ltc, eth
 Requires at least: 4.7
 Tested up to: 5.4
-Stable tag: 2.0.0
+Stable tag: 2.0.01
 Requires PHP: 5.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -34,11 +34,6 @@ CryptocurrencyCheckout.com allows direct Peer to Peer, and fully decentralized t
 
 = How much does it cost?: =
 Free! - We never charge stores or their customers any transaction, maintenance or monthly fee's to use our platform.
-
-
-= How does it work?: =
-When an order is submitted via the CryptocurrencyCheckout payment method, the order will be placed "on-hold" inside your WooCommerce Stores Dashboard. The customer will then be passed to the CryptocurrencyCheckout.com Payment Gateway, where they can choose between all the accepted cryptocurrencies you have enabled, the gateway will then manage all real-time market price calculations/conversions, provide the customer with multiple quick and easy ways to pay including 1-Click Wallet Payments, QR Codes for Mobile, or Copy and Paste options for Exchanges/Web Wallets. After the Customer marks the Payment as sent, the store/seller will verify that the coins have arrived in their wallets, and mark the order as Processing/Completed in their WooCommerce Dashboard.
-
 
 = Integrated Cryptocurrencies: =
 * Bitcoin (BTC)
@@ -87,10 +82,19 @@ When an order is submitted via the CryptocurrencyCheckout payment method, the or
 * Audax (AUDAX)
 * Documentchain (DMS)
 * DapsCoin (DAPS)
+* IndexChain (IDX)
+* Al-Buraq (BURQ)
+* HTMLCoin (HTML)
+
 
 * More to Come!
 
-Want another coin added? 
+Want another coin added?
+[Coin Request Form](https://cryptocurrencycheckout.com/get_listed)
+
+
+= How does it work?: =
+When an order is submitted via the CryptocurrencyCheckout payment method, the order will be placed "on-hold" inside your WooCommerce Stores Dashboard. The customer will then be passed to the CryptocurrencyCheckout.com Payment Gateway, where they can choose between all the accepted cryptocurrencies you have enabled, the gateway will then manage all real-time market price calculations/conversions, provide the customer with multiple quick and easy ways to pay including 1-Click Wallet Payments, QR Codes for Mobile, or Copy and Paste options for Exchanges/Web Wallets. After the Customer marks the Payment as sent, the store/seller will verify that the coins have arrived in their wallets, and mark the order as Processing/Completed in their WooCommerce Dashboard.
 
 
 = Why use CryptocurrencyCheckout? =
@@ -98,7 +102,7 @@ Want another coin added?
 *   We strive to make accepting Cryptocurrencies as easy as possible, all of our integrations offer copy and paste setup with step by step installation guides.
 *   CryptocurrencyCheckout allows direct Peer to Peer decentralized transactions directly from the Customers Wallet to the Stores Wallet with No Middleman ever in control of your cryptocurrency.
 *   Our Platform allows stores to use any wallet of their choosing, including Desktop wallets, Mobile Wallets, and Cold/Hardware Wallets.
-*   We provide your customer with a smooth and streamline checkout process, letting them choose between multiple cryptocurrencies, and multiple ways to play including 1-Click Wallet Payments, QR Codes for Mobile Devices, and Manual Entry for Exchange and Webwallet support.
+*   We provide your customer with a smooth and streamline checkout process, letting them choose between multiple cryptocurrencies, and multiple ways to pay including 1-Click Wallet Payments, QR Codes for Mobile Devices, and Manual Entry for Exchange and Webwallet support.
 *   The only information your store passes to our platform is Order Grand Total, and the Order Number. We will automatically convert the order total to real-time Cryptocurrency Market Prices, and give your customers fast and simple ways to pay.
 *   CryptocurrencyCheckout offers unique features like Market Volatility Protection Tools, as well as additional Price Markups, and Discounts to Accept Individual Cryptocurrencies. (More on this later.)
 
@@ -114,6 +118,9 @@ For instance if you set the Maximum Price Fluctuation settings to disable an ind
 Similarly you can enable the Daily Volume feature where the platform will only enable an individual Cryptocurrency Payment option if the total amount transacted on exchanges that day exceeds your set threshold. This feature is great for automatically disabling cryptocurrencies that might have very little buyer interest at the moment, making it hard to cash out.
 
 
+[More details on Market Volatility Protection Tools.](https://cryptocurrencycheckout.com/guides/volatility_protection_tools)
+
+
 = Individually set Price Markups and Discounts: =
 
 *   When enabled our Markup/Discount feature will allow you to select the option to charge slightly more or offer a small discount for accepting specific cryptocurrencies. 
@@ -124,6 +131,8 @@ Similarly you can enable the Daily Volume feature where the platform will only e
 When this feature is combined with our Market Volatility Protection Tools, you can see how easily you will be able to weigh and adjust your risks of accepting individual Cryptocurrencies and Altcoins.
 Allowing you to more comfortably accept Cryptocurrencies that you might not otherwise, and accepting more cryptocurrencies will expose your business to larger audiences, therefore increasing your potential customer base.
 
+
+[More details on setting up price Discounts/Markups.](https://cryptocurrencycheckout.com/guides/volatility_protection_tools)
 
 
 
@@ -336,3 +345,7 @@ In some cases you may have to manually install the plugin, to do so is fairly si
 = 2.0.0 =
 
 * Add Optional Payment Button to Order Emails, Fix Depreciated Warning, Bug Fixes.
+
+= 2.0.01 =
+
+* Add Cryptocurrencies: IDX, BURQ, HTML to plugin
