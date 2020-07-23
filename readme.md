@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 4.3.0
- - Stable Tag: 2.0.01
+ - Stable Tag: 2.0.02
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -121,3 +121,6 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2020.07.21 - version 2.0.01 =
 * Add Cryptocurrencies: IDX, BURQ, HTML to plugin
+
+= 2020.07.23 - version 2.0.02 =
+* Add Cryptocurrencies: GHOST, FDR to plugin
