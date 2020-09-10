@@ -3,7 +3,7 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Version: 2.0.02
+ * Version: 2.0.03
  * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
@@ -157,6 +157,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->htmlAddress 		= $this->get_option( 'htmlAddress' );
 			$this->ghostAddress 	= $this->get_option( 'ghostAddress' );
 			$this->fdrAddress 		= $this->get_option( 'fdrAddress' );
+			$this->zerAddress 		= $this->get_option( 'zerAddress' );
 		  
 			// Actions
 			add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
@@ -654,6 +655,14 @@ function cryptocurrencycheckout_gateway_init() {
 					'desc_tip'    => true,
 				),
 
+				'zerAddress' => array(
+					'title'       => __( 'ZERO Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Zero Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'APIToken' => array(
 					'title'       => __( 'API Token Keys:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'textarea',
@@ -736,6 +745,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_HTML_ADDRESS'] = $this->htmlAddress;
 			$postfields['CC_GHOST_ADDRESS'] = $this->ghostAddress;
 			$postfields['CC_FDR_ADDRESS'] = $this->fdrAddress;
+			$postfields['CC_ZER_ADDRESS'] = $this->zerAddress;
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
 			if ( $this->redirect == 'yes' ) {
@@ -837,6 +847,7 @@ function cryptocurrencycheckout_gateway_init() {
 				$postfields['HTML'] = $this->htmlAddress;
 				$postfields['GHOST'] = $this->ghostAddress;
 				$postfields['FDR'] = $this->fdrAddress;
+				$postfields['ZER'] = $this->zerAddress;
 	
 				$htmlOutput ='<div style="padding-top: 20px; padding-bottom: 20px;">';
 				$htmlOutput .= '' . $this->Instructions . '<br><br>';
