@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 4.3.0
- - Stable Tag: 2.0.03
+ - Stable Tag: 2.0.04
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -127,3 +127,6 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2020.09.10 - version 2.0.03 =
 * Add Cryptocurrencies: ZER to plugin
+
+= 2020.10.07 - version 2.0.04 =
+* Add Cryptocurrencies: BTCZ to plugin
