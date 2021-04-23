@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 4.3.0
- - Stable Tag: 2.0.05
+ - Stable Tag: 2.0.06
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -133,3 +133,6 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2021.03.17 - version 2.0.05 =
 * Add Cryptocurrencies: ALIAS to plugin
+
+= 2021.04.23 - version 2.0.06 =
+* Add Cryptocurrencies: XDN, ETHO, DRGN, SIGNA, DVPN, TUBE, TN, & ERG to plugin

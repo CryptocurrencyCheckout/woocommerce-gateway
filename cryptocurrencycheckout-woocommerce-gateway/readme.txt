@@ -4,7 +4,7 @@ Donate link: https://cryptocurrencycheckout.com/
 Tags: cryptocurrency, crypto, checkout, woocommerce, e-commerce, ecommerce, store, payments, gateway, paypal, cryptocurrency checkout, bitcoin, litecoin, ethereum, dash, btc, ltc, eth
 Requires at least: 4.7
 Tested up to: 5.7
-Stable tag: 2.0.05
+Stable tag: 2.0.06
 Requires PHP: 5.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -90,6 +90,14 @@ Free! - We never charge stores or their customers any transaction, maintenance o
 * Zero (ZER)
 * BitcoinZ (BTCZ)
 * Alias (ALIAS)
+* DigitalNote (XDN)
+* Etho Protocol (ETHO)
+* Dragonchain (DRGN)
+* Signum Netowrk (SIGNA)
+* Sentinel (DVPN)
+* BitTube (TUBE)
+* Turtle Network (TN)
+* Ergo (ERG)
 
 
 
@@ -372,3 +380,7 @@ In some cases you may have to manually install the plugin, to do so is fairly si
 = 2.0.05 =
 
 * Add Cryptocurrencies: ALIAS to plugin
+
+= 2.0.06 =
+
+* Add Cryptocurrencies: XDN, ETHO, DRGN, SIGNA, DVPN, TUBE, TN, & ERG to plugin

@@ -3,7 +3,7 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Version: 2.0.05
+ * Version: 2.0.06
  * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
@@ -160,6 +160,14 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->zerAddress 		= $this->get_option( 'zerAddress' );
 			$this->btczAddress 		= $this->get_option( 'btczAddress' );
 			$this->aliasAddress 	= $this->get_option( 'aliasAddress' );
+			$this->xdnAddress 		= $this->get_option( 'xdnAddress' );
+			$this->ethoAddress 		= $this->get_option( 'ethoAddress' );
+			$this->drgnAddress 		= $this->get_option( 'drgnAddress' );
+			$this->signaAddress 	= $this->get_option( 'signaAddress' );
+			$this->dvpnAddress 		= $this->get_option( 'dvpnAddress' );
+			$this->tubeAddress 		= $this->get_option( 'tubeAddress' );
+			$this->tnAddress 		= $this->get_option( 'tnAddress' );
+			$this->ergAddress 		= $this->get_option( 'ergAddress' );
 		  
 			// Actions
 			add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
@@ -681,6 +689,70 @@ function cryptocurrencycheckout_gateway_init() {
 					'desc_tip'    => true,
 				),
 
+				'xdnAddress' => array(
+					'title'       => __( 'XDN Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your DigitalNote Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'ethoAddress' => array(
+					'title'       => __( 'ETHO Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Etho Protocol Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'drgnAddress' => array(
+					'title'       => __( 'DRGN Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Dragonchain Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'signaAddress' => array(
+					'title'       => __( 'SIGNA Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Signum Network Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'dvpnAddress' => array(
+					'title'       => __( 'DVPN Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Sentinel Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'tubeAddress' => array(
+					'title'       => __( 'TUBE Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your BitTube Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'tnAddress' => array(
+					'title'       => __( 'TN Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Turtle Network Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'ergAddress' => array(
+					'title'       => __( 'ERG Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Ergo Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'APIToken' => array(
 					'title'       => __( 'API Token Keys:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'textarea',
@@ -766,6 +838,14 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_ZER_ADDRESS'] = $this->zerAddress;
 			$postfields['CC_BTCZ_ADDRESS'] = $this->btczAddress;
 			$postfields['CC_ALIAS_ADDRESS'] = $this->aliasAddress;
+			$postfields['CC_XDN_ADDRESS'] = $this->xdnAddress;
+			$postfields['CC_ETHO_ADDRESS'] = $this->ethoAddress;
+			$postfields['CC_DRGN_ADDRESS'] = $this->drgnAddress;
+			$postfields['CC_SIGNA_ADDRESS'] = $this->signaAddress;
+			$postfields['CC_DVPN_ADDRESS'] = $this->dvpnAddress;
+			$postfields['CC_TUBE_ADDRESS'] = $this->tubeAddress;
+			$postfields['CC_TN_ADDRESS'] = $this->tnAddress;
+			$postfields['CC_ERG_ADDRESS'] = $this->ergAddress;
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
 			if ( $this->redirect == 'yes' ) {
@@ -870,6 +950,15 @@ function cryptocurrencycheckout_gateway_init() {
 				$postfields['ZER'] = $this->zerAddress;
 				$postfields['BTCZ'] = $this->btczAddress;
 				$postfields['ALIAS'] = $this->aliasAddress;
+				$postfields['XDN'] = $this->xdnAddress;
+				$postfields['ETHO'] = $this->ethoAddress;
+				$postfields['DRGN'] = $this->drgnAddress;
+				$postfields['SIGNA'] = $this->signaAddress;
+				$postfields['DVPN'] = $this->dvpnAddress;
+				$postfields['TUBE'] = $this->tubeAddress;
+				$postfields['TN'] = $this->tnAddress;
+				$postfields['ERG'] = $this->ergAddress;
+				
 	
 				$htmlOutput ='<div style="padding-top: 20px; padding-bottom: 20px;">';
 				$htmlOutput .= '' . $this->Instructions . '<br><br>';
