@@ -4,7 +4,7 @@ Donate link: https://cryptocurrencycheckout.com/
 Tags: cryptocurrency, crypto, checkout, woocommerce, e-commerce, ecommerce, store, payments, gateway, paypal, cryptocurrency checkout, bitcoin, litecoin, ethereum, dash, btc, ltc, eth
 Requires at least: 4.7
 Tested up to: 5.7
-Stable tag: 2.0.06
+Stable tag: 2.0.07
 Requires PHP: 5.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -98,6 +98,11 @@ Free! - We never charge stores or their customers any transaction, maintenance o
 * BitTube (TUBE)
 * Turtle Network (TN)
 * Ergo (ERG)
+* SigmaUSD (SIGUSD)
+* Binjit (BNJ)
+* Tether (USDT ERC-20)
+* NestEGG (EGG)
+
 
 
 
@@ -384,3 +389,7 @@ In some cases you may have to manually install the plugin, to do so is fairly si
 = 2.0.06 =
 
 * Add Cryptocurrencies: XDN, ETHO, DRGN, SIGNA, DVPN, TUBE, TN, & ERG to plugin
+
+= 2.0.07 =
+
+* Add Cryptocurrencies: SIGUSD, BNJ, USDT, EGG to plugin

@@ -3,12 +3,12 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Version: 2.0.06
+ * Version: 2.0.07
  * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
  *
- * Copyright: (c) 2018-2020 CryptocurrencyCheckout (support@cryptocurrencycheckout.com) and WooCommerce
+ * Copyright: (c) 2018-2021 CryptocurrencyCheckout (support@cryptocurrencycheckout.com) and WooCommerce
  *
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -168,6 +168,10 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->tubeAddress 		= $this->get_option( 'tubeAddress' );
 			$this->tnAddress 		= $this->get_option( 'tnAddress' );
 			$this->ergAddress 		= $this->get_option( 'ergAddress' );
+			$this->sigusdAddress 	= $this->get_option( 'sigusdAddress' );
+			$this->bnjAddress 		= $this->get_option( 'bnjAddress' );
+			$this->usdtAddress 		= $this->get_option( 'usdtAddress' );
+			$this->eggAddress 		= $this->get_option( 'eggAddress' );
 		  
 			// Actions
 			add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
@@ -753,6 +757,38 @@ function cryptocurrencycheckout_gateway_init() {
 					'desc_tip'    => true,
 				),
 
+				'sigusdAddress' => array(
+					'title'       => __( 'SIGUSD Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your SigmaUSD Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'bnjAddress' => array(
+					'title'       => __( 'BNJ Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Binjit Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'usdtAddress' => array(
+					'title'       => __( 'USDT Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Tether Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
+				'eggAddress' => array(
+					'title'       => __( 'EGG Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your NestEGG Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'APIToken' => array(
 					'title'       => __( 'API Token Keys:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'textarea',
@@ -846,6 +882,10 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_TUBE_ADDRESS'] = $this->tubeAddress;
 			$postfields['CC_TN_ADDRESS'] = $this->tnAddress;
 			$postfields['CC_ERG_ADDRESS'] = $this->ergAddress;
+			$postfields['CC_SIGUSD_ADDRESS'] = $this->sigusdAddress;
+			$postfields['CC_BNJ_ADDRESS'] = $this->bnjAddress;
+			$postfields['CC_USDT_ADDRESS'] = $this->usdtAddress;
+			$postfields['CC_EGG_ADDRESS'] = $this->eggAddress;
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
 			if ( $this->redirect == 'yes' ) {
@@ -958,6 +998,10 @@ function cryptocurrencycheckout_gateway_init() {
 				$postfields['TUBE'] = $this->tubeAddress;
 				$postfields['TN'] = $this->tnAddress;
 				$postfields['ERG'] = $this->ergAddress;
+				$postfields['SIGUSD'] = $this->sigusdAddress;
+				$postfields['BNJ'] = $this->bnjAddress;
+				$postfields['USDT'] = $this->usdtAddress;
+				$postfields['EGG'] = $this->eggAddress;
 				
 	
 				$htmlOutput ='<div style="padding-top: 20px; padding-bottom: 20px;">';
