@@ -3,7 +3,7 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Version: 2.0.07
+ * Version: 2.0.08
  * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
@@ -172,6 +172,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->bnjAddress 		= $this->get_option( 'bnjAddress' );
 			$this->usdtAddress 		= $this->get_option( 'usdtAddress' );
 			$this->eggAddress 		= $this->get_option( 'eggAddress' );
+			$this->nlifeAddress 		= $this->get_option( 'nlifeAddress' );
 		  
 			// Actions
 			add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
@@ -789,6 +790,14 @@ function cryptocurrencycheckout_gateway_init() {
 					'desc_tip'    => true,
 				),
 
+				'nlifeAddress' => array(
+					'title'       => __( 'NLIFE Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your Night Life Crypto Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'APIToken' => array(
 					'title'       => __( 'API Token Keys:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'textarea',
@@ -886,6 +895,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_BNJ_ADDRESS'] = $this->bnjAddress;
 			$postfields['CC_USDT_ADDRESS'] = $this->usdtAddress;
 			$postfields['CC_EGG_ADDRESS'] = $this->eggAddress;
+			$postfields['CC_NLIFE_ADDRESS'] = $this->nlifeAddress;
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
 			if ( $this->redirect == 'yes' ) {
@@ -1002,6 +1012,7 @@ function cryptocurrencycheckout_gateway_init() {
 				$postfields['BNJ'] = $this->bnjAddress;
 				$postfields['USDT'] = $this->usdtAddress;
 				$postfields['EGG'] = $this->eggAddress;
+				$postfields['NLIFE'] = $this->nlifeAddress;
 				
 	
 				$htmlOutput ='<div style="padding-top: 20px; padding-bottom: 20px;">';

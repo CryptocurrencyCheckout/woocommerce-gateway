@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 4.3.0
- - Stable Tag: 2.0.07
+ - Stable Tag: 2.0.08
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -139,3 +139,6 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2021.05.06 - version 2.0.07 =
 * Add Cryptocurrencies: SIGUSD, BNJ, USDT, EGG to plugin
+
+= 2021.06.22 - version 2.0.08 =
+* Add Cryptocurrencies: NLIFE to plugin
