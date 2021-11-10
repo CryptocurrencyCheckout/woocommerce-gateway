@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 4.3.0
- - Stable Tag: 2.0.09
+ - Stable Tag: 2.0.10
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -145,3 +145,6 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2021.09.16 - version 2.0.09 =
 * Add Cryptocurrencies: XHV, XUSD to plugin
+
+= 2021.11.10 - version 2.0.10 =
+* Add Cryptocurrencies: MOONSHOT, GTH, HNS to plugin

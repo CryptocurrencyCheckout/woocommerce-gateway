@@ -4,7 +4,7 @@ Donate link: https://cryptocurrencycheckout.com/
 Tags: cryptocurrency, crypto, checkout, woocommerce, e-commerce, ecommerce, store, payments, gateway, paypal, cryptocurrency checkout, bitcoin, litecoin, ethereum, dash, btc, ltc, eth
 Requires at least: 4.7
 Tested up to: 5.7
-Stable tag: 2.0.09
+Stable tag: 2.0.10
 Requires PHP: 5.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -105,6 +105,9 @@ Free! - We never charge stores or their customers any transaction, maintenance o
 * Night Life Crypto (NLIFE)
 * Haven (XHV)
 * Haven xUSD (XUSD)
+* Moonshot (MOONSHOT)
+* Gather (GTH)
+* Handshake (HNS)
 
 
 
@@ -404,3 +407,7 @@ In some cases you may have to manually install the plugin, to do so is fairly si
 = 2.0.09 =
 
 * Add Cryptocurrencies: XHV, XUSD to plugin
+
+= 2.0.10 =
+
+* Add Cryptocurrencies: MOONSHOT, GTH, HNS to plugin
