@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 4.3.0
- - Stable Tag: 2.0.11
+ - Stable Tag: 2.0.12
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -151,3 +151,6 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2022.01.18 - version 2.0.11 =
 * Add Cryptocurrencies: RTM to plugin
+
+= 2022.03.03 - version 2.0.12 =
+* Add Cryptocurrencies: CDS, XMR to plugin
