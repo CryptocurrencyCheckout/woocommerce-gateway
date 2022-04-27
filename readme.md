@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 4.3.0
- - Stable Tag: 2.0.13
+ - Stable Tag: 2.0.14
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -157,3 +157,6 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2022.03.12 - version 2.0.13 =
 * Add Cryptocurrencies: PRCY, CASH to plugin
+
+= 2022.04.27 - version 2.0.14 =
+* Add Cryptocurrencies: GRLC, KTS to plugin
