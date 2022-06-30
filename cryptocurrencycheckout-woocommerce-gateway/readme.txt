@@ -3,7 +3,7 @@ Contributors: cryptocurrencycheckout
 Donate link: https://cryptocurrencycheckout.com/
 Tags: cryptocurrency, crypto, checkout, woocommerce, e-commerce, ecommerce, store, payments, gateway, paypal, cryptocurrency checkout, bitcoin, litecoin, ethereum, dash, btc, ltc, eth
 Requires at least: 4.7
-Tested up to: 5.7
+Tested up to: 6.0
 Stable tag: 2.0.15
 Requires PHP: 5.2
 License: GPLv2 or later
