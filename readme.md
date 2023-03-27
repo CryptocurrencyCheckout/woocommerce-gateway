@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 4.3.0
- - Stable Tag: 2.0.16
+ - Stable Tag: 2.0.17
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -163,3 +163,6 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2022.11.07 - version 2.0.16 =
 * Add Cryptocurrencies: KAS, MARIA to plugin
+
+= 2022.03.26 - version 2.0.17 =
+* Add Cryptocurrencies: FLUX, PAPRY, NEXA, BCH to plugin
