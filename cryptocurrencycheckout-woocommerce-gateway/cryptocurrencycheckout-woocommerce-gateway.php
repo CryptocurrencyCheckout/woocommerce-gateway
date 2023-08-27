@@ -3,7 +3,7 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Version: 2.0.17
+ * Version: 2.0.18
  * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
@@ -122,7 +122,6 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->galiAddress 		= $this->get_option( 'galiAddress' );
 			$this->bitcAddress 		= $this->get_option( 'bitcAddress' );
 			$this->okAddress 		= $this->get_option( 'okAddress' );
-			$this->ethploAddress 	= $this->get_option( 'ethploAddress' );
 			$this->arkAddress 		= $this->get_option( 'arkAddress' );
 			$this->veilAddress 		= $this->get_option( 'veilAddress' );
 			$this->dogeAddress 		= $this->get_option( 'dogeAddress' );
@@ -194,6 +193,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->papryAddress 	= $this->get_option( 'papryAddress' );
 			$this->nexaAddress 		= $this->get_option( 'nexaAddress' );
 			$this->bchAddress 		= $this->get_option( 'bchAddress' );
+			$this->kiiroAddress 	= $this->get_option( 'kiiroAddress' );
 
 		  
 			// Actions
@@ -408,14 +408,6 @@ function cryptocurrencycheckout_gateway_init() {
 					'title'       => __( 'OK Address:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'text',
 					'description' => __( 'Enter your OKcash Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
-					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
-					'desc_tip'    => true,
-				),
-
-				'ethploAddress' => array(
-					'title'       => __( 'ETHPLO Address:', 'cryptocurrencycheckout-wc-gateway' ),
-					'type'        => 'text',
-					'description' => __( 'Enter your ETHplode Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
 					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
 					'desc_tip'    => true,
 				),
@@ -988,6 +980,14 @@ function cryptocurrencycheckout_gateway_init() {
 					'desc_tip'    => true,
 				),
 
+				'kiiroAddress' => array(
+					'title'       => __( 'KIIRO Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your KiiroCoin Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'APIToken' => array(
 					'title'       => __( 'API Token Keys:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'textarea',
@@ -1035,7 +1035,6 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_GALI_ADDRESS'] = $this->galiAddress;
 			$postfields['CC_BITC_ADDRESS'] = $this->bitcAddress;
 			$postfields['CC_OK_ADDRESS'] = $this->okAddress;
-			$postfields['CC_ETHPLO_ADDRESS'] = $this->ethploAddress;
 			$postfields['CC_ARK_ADDRESS'] = $this->arkAddress;
 			$postfields['CC_VEIL_ADDRESS'] = $this->veilAddress;
 			$postfields['CC_DOGE_ADDRESS'] = $this->dogeAddress;
@@ -1107,6 +1106,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_PAPRY_ADDRESS'] = $this->papryAddress;
 			$postfields['CC_NEXA_ADDRESS'] = $this->nexaAddress;
 			$postfields['CC_BCH_ADDRESS'] = $this->bchAddress;
+			$postfields['CC_KIIRO_ADDRESS'] = $this->kiiroAddress;
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
 			if ( $this->redirect == 'yes' ) {
@@ -1173,7 +1173,6 @@ function cryptocurrencycheckout_gateway_init() {
 				$postfields['GALI'] = $this->galiAddress;
 				$postfields['BITC'] = $this->bitcAddress;
 				$postfields['OK'] = $this->okAddress;
-				$postfields['ETHPLO'] = $this->ethploAddress;
 				$postfields['ARK'] = $this->arkAddress;
 				$postfields['VEIL'] = $this->veilAddress;
 				$postfields['DOGE'] = $this->dogeAddress;
@@ -1245,6 +1244,7 @@ function cryptocurrencycheckout_gateway_init() {
 				$postfields['PAPRY'] = $this->papryAddress;
 				$postfields['NEXA'] = $this->nexaAddress;
 				$postfields['BCH'] = $this->bchAddress;
+				$postfields['KIIRO'] = $this->kiiroAddress;
 	
 				$htmlOutput ='<div style="padding-top: 20px; padding-bottom: 20px;">';
 				$htmlOutput .= '' . $this->Instructions . '<br><br>';

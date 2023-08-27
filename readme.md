@@ -4,8 +4,8 @@
  - Tags: woocommerce, payment gateway, gateway, accept cryptocurrency, crypto, bitcoin, litecoin, ethereum, dash, more.
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
- - Tested WooCommerce up to: 4.3.0
- - Stable Tag: 2.0.17
+ - Tested WooCommerce up to: 6.3.0
+ - Stable Tag: 2.0.18
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -164,5 +164,9 @@ Please do! We'd like to see the changes and different methods people come up for
 = 2022.11.07 - version 2.0.16 =
 * Add Cryptocurrencies: KAS, MARIA to plugin
 
-= 2022.03.26 - version 2.0.17 =
+= 2023.03.26 - version 2.0.17 =
 * Add Cryptocurrencies: FLUX, PAPRY, NEXA, BCH to plugin
+
+= 2023.03.26 - version 2.0.18 =
+* Add Cryptocurrencies: KIIRO to plugin
+* Remove Cryptocurrencies: ETHPLO from plugin
