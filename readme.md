@@ -5,7 +5,7 @@
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
  - Tested WooCommerce up to: 6.3.0
- - Stable Tag: 2.0.18
+ - Stable Tag: 2.0.19
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -167,6 +167,9 @@ Please do! We'd like to see the changes and different methods people come up for
 = 2023.03.26 - version 2.0.17 =
 * Add Cryptocurrencies: FLUX, PAPRY, NEXA, BCH to plugin
 
-= 2023.03.26 - version 2.0.18 =
+= 2023.08.27 - version 2.0.18 =
 * Add Cryptocurrencies: KIIRO to plugin
 * Remove Cryptocurrencies: ETHPLO from plugin
+
+= 2023.11.05 - version 2.0.19 =
+* Add Cryptocurrencies: BLOCX to plugin
