@@ -4,8 +4,8 @@
  - Tags: woocommerce, payment gateway, gateway, accept cryptocurrency, crypto, bitcoin, litecoin, ethereum, dash, more.
  - [Donate link](https://cryptocurrencycheckout.com/donate/CryptoCheckout)
  - Requires WooCommerce at least: 2.1
- - Tested WooCommerce up to: 6.3.0
- - Stable Tag: 2.0.19
+ - Tested WooCommerce up to: 9.2.3
+ - Stable Tag: 2.0.20
  - License: MIT
  - License URI: https://opensource.org/licenses/MIT
 
@@ -173,3 +173,6 @@ Please do! We'd like to see the changes and different methods people come up for
 
 = 2023.11.05 - version 2.0.19 =
 * Add Cryptocurrencies: BLOCX to plugin
+
+= 2024.09.11 - version 2.0.20 =
+* Add Cryptocurrencies: XEL to plugin

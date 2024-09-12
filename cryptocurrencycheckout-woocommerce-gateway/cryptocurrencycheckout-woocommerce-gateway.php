@@ -3,7 +3,7 @@
  * Plugin Name: CryptocurrencyCheckout WooCommerce Gateway
  * Plugin URI: https://cryptocurrencycheckout.com/
  * Description: Connects your WooCommerce Store Checkout to the CryptocurrencyCheckout Payment Gateway so you can start accepting Cryptocurrencies like Bitcoin, Ethereum, Dash, Litecoin and more for free. 
- * Version: 2.0.19
+ * Version: 2.0.20
  * Author: cryptocurrencycheckout
  * Text Domain: cryptocurrencycheckout-wc-gateway
  * Domain Path: /i18n/languages/
@@ -195,6 +195,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$this->bchAddress 		= $this->get_option( 'bchAddress' );
 			$this->kiiroAddress 	= $this->get_option( 'kiiroAddress' );
 			$this->blocxAddress 	= $this->get_option( 'blocxAddress' );
+			$this->xelAddress 		= $this->get_option( 'xelAddress' );
 
 		  
 			// Actions
@@ -997,6 +998,14 @@ function cryptocurrencycheckout_gateway_init() {
 					'desc_tip'    => true,
 				),
 
+				'xelAddress' => array(
+					'title'       => __( 'Xelis Address:', 'cryptocurrencycheckout-wc-gateway' ),
+					'type'        => 'text',
+					'description' => __( 'Enter your XEL Address, must match the address input in CryptocurrencyCheckout Dashboard Connection.' ),
+					'default'     => __( '', 'cryptocurrencycheckout-wc-gateway' ),
+					'desc_tip'    => true,
+				),
+
 				'APIToken' => array(
 					'title'       => __( 'API Token Keys:', 'cryptocurrencycheckout-wc-gateway' ),
 					'type'        => 'textarea',
@@ -1117,6 +1126,7 @@ function cryptocurrencycheckout_gateway_init() {
 			$postfields['CC_BCH_ADDRESS'] = $this->bchAddress;
 			$postfields['CC_KIIRO_ADDRESS'] = $this->kiiroAddress;
 			$postfields['CC_BLOCX_ADDRESS'] = $this->blocxAddress;
+			$postfields['CC_XEL_ADDRESS'] = $this->xelAddress;
 
 			// This is an auto redirect option for thank you page, if enabled in Wordpress/WooCommerce Dashboard, will automatically click the payNow button, redirecting customers to CryptocurrencyCheckout
 			if ( $this->redirect == 'yes' ) {
@@ -1256,6 +1266,7 @@ function cryptocurrencycheckout_gateway_init() {
 				$postfields['BCH'] = $this->bchAddress;
 				$postfields['KIIRO'] = $this->kiiroAddress;
 				$postfields['BLOCX'] = $this->blocxAddress;
+				$postfields['XEL'] = $this->xelAddress;
 	
 				$htmlOutput ='<div style="padding-top: 20px; padding-bottom: 20px;">';
 				$htmlOutput .= '' . $this->Instructions . '<br><br>';
